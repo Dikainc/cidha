@@ -45,30 +45,33 @@
                         <form role="form">
                             <fieldset>
                                 <div class="form-group">
-                                    <input class="form-control" placeholder="referal email"  type="text" autofocus>
+                                    <input class="form-control" placeholder="referal email" type="text" autofocus>
                                 </div>
                                 <div class="form-group">
-                                    <input class="form-control" placeholder="First Name"  type="text" autofocus>
+                                    <input class="form-control" placeholder="First Name" type="text" autofocus>
                                 </div>
                                 <div class="form-group">
-                                    <input class="form-control" placeholder="Last Name"  type="text" autofocus>
+                                    <input class="form-control" placeholder="Last Name" type="text" autofocus>
                                 </div>
-                            
+
                                 <div class="form-group">
                                     <input class="form-control" placeholder="E-mail" name="email" type="email" autofocus>
                                 </div>
                                 <div class="form-group">
-                                    <input class="form-control" placeholder="Password" name="password" type="password" value="">
+                                    <input class="form-control" id="password" placeholder="Password" name="password" type="password" value="">
                                 </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input name="remember" type="checkbox" value="Remember Me">Remember Me
-                                    </label>
+
+                                <div class="form-group">
+                                    <input class="form-control" id="confirm_password" onkeyup="check();" placeholder="Repeat Password" name="password" type="password" value=""> <span id="message"></span>
                                 </div>
+
                                 <!-- Change this to a button or input when using this as a form -->
                                 <a href="index.html" class="btn btn-lg btn-success btn-block">Login</a>
                             </fieldset>
                         </form>
+                    </div>
+                    <div class="panel-footer text-center">
+                        <span>Have an account?</span> <span> <a href="#"> Login </a> </span>
                     </div>
                 </div>
             </div>
@@ -86,6 +89,19 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="../dist/js/sb-admin-2.js"></script>
+
+    <script>
+         var check = function() {
+      if (document.getElementById('password').value == document.getElementById('confirm_password').value) {
+          document.getElementById('message').style.color = 'green';
+          document.getElementById('message').innerHTML = 'correct';
+      } else {
+      		document.getElementById('message').style.color = 'red';
+          document.getElementById('message').innerHTML = 'password must be the same';
+      }
+  }
+        
+    </script>
 
 </body>
 
